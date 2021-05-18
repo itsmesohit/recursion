@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Recursion Generate all possible strings  of Valid  Brackets 
+//Time complexity for this Problem is ==  O(2^n)
+
+void generatStrings(string ans , int n, int open, int close, int cur){
+    
+    if(cur==2*n){
+        
+        cout<<ans<<endl;
+        return ;
+    }
+    // For opening Brackets.........
+    if(open<n){
+        generatStrings(ans+'(', n, open+1, close, cur+1);
+    }
+    
+    // For closing Brackets........
+    if(close<open){
+        generatStrings(ans+')', n, open, close+1, cur+1);
+    }
+    
+    return ;
+}
+
+int main() {
+    string ans;
+	int t;
+	cin>>t;
+	
+	generatStrings(ans , t,0,0,0);
+	
+	return 0;
+}
