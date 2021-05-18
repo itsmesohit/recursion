@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Recursion Climbing Ladder Problem
+
+//Time complexity for this Problem Is ==  O(3^n)
+
+int climways(int n){
+    if(n<0) return 0;
+    if(n==0) return 1;
+
+    
+    return climways(n-1)+climways(n-2)+climways(n-3);
+}
+
+int main() {
+	int t;
+	cin>>t;
+	cout<<climways(t)<<endl;
+	return 0;
+}
